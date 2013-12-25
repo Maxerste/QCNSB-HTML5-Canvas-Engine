@@ -35,8 +35,15 @@ canvasObj.drawall = function() {
   }
 }
 canvasObj.draw = function(spr) {
-	switch (spr.drawing) {
+	switch (spr.type) {
 		//Draw all the sprites and other stuff
+		case "line":
+			this.ctx.beginPath();
+			this.ctx.lineWidth="3";
+			this.ctx.strokeStyle="black"
+			this.ctx.moveTO(spr.left + spr.start[0], spr.top + spr.start[1]);
+			this.ctz.lineTO(spr.left + spr.end[0], spr.top + spr.end[1]);
+			break;
 	}
 }
 canvasObj.update = function() {
